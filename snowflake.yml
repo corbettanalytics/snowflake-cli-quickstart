@@ -1,0 +1,14 @@
+definition_version: 1
+snowpark:
+  project_name: snowflake_cli_demo
+  stage_name: snowflake_cli_demo.prod.demo_stage
+  src: app
+  functions:
+    - name: hello
+      database: snowflake_cli_demo
+      schema: prod
+      handler: functions.hello
+      signature:
+        - name: name
+          type: string
+      returns: string
